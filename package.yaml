@@ -1,15 +1,15 @@
-name: FireTV Card
-description: 📺 FireTV Remote Card
+name: Rotel Card
+description: 📺 Rotel Remote Card
 type: lovelace
 keywords:
-  - firetvcard
-  - remote
-  - firetv
-  - amazon
+  - rotelcard
+  - rotel
+  - rotel
+  - rotel
   - television
 author:
   name: mar_robHD
 license: Apache License, Version 2.0
 files:
-  - firetv-card.js
-  - firetv-card-editor.js
+  - rotel-card.js
+  - rotel-card-editor.js
