@@ -1,5 +1,5 @@
-# FireTV Remote Card
-📺 [FireTV Lovelace Card](https://github.com/custom-cards/roku-card) editited by mar_robHD
+# Rotel Remote Card
+📺 [Rotel Lovelace Card](https://github.com/custom-cards/roku-card) editited by mar_robHD
 
 [![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE.md)
@@ -15,7 +15,7 @@
 
 ## Support
 
-This card is for [Lovelace](https://www.home-assistant.io/lovelace) on [Home Assistant](https://www.home-assistant.io/) that display a [FireTV]() remote.
+This card is for [Lovelace](https://www.home-assistant.io/lovelace) on [Home Assistant](https://www.home-assistant.io/) that display a [Rotel]() remote.
 
 # NOTE: Firefox releases before 67 are not supported
 https://twitter.com/_developit/status/1090364879377260544
@@ -33,16 +33,20 @@ https://twitter.com/_developit/status/1090364879377260544
 | theme | string | **Optional** | Card theme
 | tv | boolean | **Optional** | If `true` shows volume and power buttons. Default `false`
 | power | `service` | **Optional**| service to call when power button pressed
-| back | `service` | **Optional**| service to call when back button pressed
-| home | `service` | **Optional**| service to call when home button pressed
+| power-off | `service` | **Optional**| service to call when power-off button pressed
+| sinput-tv | `service` | **Optional**| service to call when home button pressed
 | up | `service` | **Optional**| service to call when up button pressed
 | left | `service` | **Optional**| service to call when left button pressed
 | select | `service` | **Optional**| service to call when select button pressed
 | right | `service` | **Optional**| service to call when right button pressed
 | down | `service` | **Optional**| service to call when down button pressed
-| reverse | `service` | **Optional**| service to call when reverse button pressed
-| play | `service` | **Optional**| service to call when play button pressed
-| forward | `service` | **Optional**| service to call when forward button pressed
+| sinput-bluray | `service` | **Optional**| service to call when bluray button pressed
+| sinput-phono | `service` | **Optional**| service to call when phono button pressed
+| sinput-cd | `service` | **Optional**| service to call when cd button pressed
+| volume_up | `service` | **Optional**| service to call when volume up button pressed
+| volume_down | `service` | **Optional**| service to call when volume down button pressed
+| volume_mute | `service` | **Optional**| service to call when volume mute button pressed
+
 
 ## `service` Options
 | Name | Type | Requirement | Description
@@ -55,24 +59,24 @@ https://twitter.com/_developit/status/1090364879377260544
 
 ### Step 1
 
-Install `firetv-card` by copying `firetv-card.js` and `firetv-card-editor.js` from this repo to `<config directory>/www/firetv-card.js` on your Home Assistant instance.
+Install `rotel-card` by copying `rotel-card.js` and `rotel-card-editor.js` from this repo to `<config directory>/www/rotel-card.js` on your Home Assistant instance.
 
 **Example:**
 
 ```bash
-wget https://raw.githubusercontent.com/marrobHD/firetv-card/master/firetv-card.js
-wget https://raw.githubusercontent.com/marrobHD/firetv-card/master/firetv-card-editor.js
-mv firetv-card* /config/www/
+wget https://raw.githubusercontent.com/marrobHD/rotel-card/master/rotel-card.js
+wget https://raw.githubusercontent.com/marrobHD/rotel-card/master/rotel-card-editor.js
+mv rotel-card* /config/www/
 ```
 
 ### Step 2
 
-Link `firetv-card` inside your `ui-lovelace.yaml`.
+Link `rotel-card` inside your `ui-lovelace.yaml`.
 
 ```yaml
 resources:
   - type: module
-    url: /local/tv-card.js?v=1
+    url: /local/rotel-card.js?v=1
 ```
 
 ### Step 3
@@ -154,7 +158,7 @@ Add this to your `configuration.yaml`
 ```
 custom_updater:
   card_urls:
-    - https://raw.githubusercontent.com/marrobHD/firetv-card/master/tracker.json
+    - https://raw.githubusercontent.com/marrobHD/rotel-card/master/tracker.json
 ```
 
 
