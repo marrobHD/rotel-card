@@ -83,72 +83,99 @@ resources:
 
 Add a custom element in your `ui-lovelace.yaml`
 
+Configuration for [Rotel RSX-1562](http://www.rotel.com/sites/default/files/product/rsx1562_silver.jpg):
+
 ```yaml
-      - theme: Backend-selected
+      - type: 'custom:rotel-card'
+        theme: Backend-selected
         tv: false
-        type: 'custom:firetv-card'
-        entity: media_player.spotify
-        name: TV
+        type: 'custom:rotel-card'
+        name: Rotel
+        remote: input_select.tv_input
         power:
-          service: androidtv.adb_command
+          service: broadlink.send
           service_data:
-            command: "input keyevent 26"
-            entity_id: media_player.firetv
-        back:
-          service: androidtv.adb_command
+            host: 192.168.178.73
+            packet: >-
+                  JgBQAAABJZUQORI3ExIRFQ8VEBQRFRE3ERURExAWDxUROBAUEhMRFBAUERUQFQ86EDkQFREUEDgROhA6EDkQFBAVEDkRORAUEgAFuQABJ0oQAA0FAAAAAAAAAAA=
+        power-off:
+          service: broadlink.send
           service_data:
-            command: BACK
-            entity_id: media_player.firetv
-        home:
-          service: androidtv.adb_command
+            host: 192.168.178.73
+            packet: >-
+              JgBQAAABJpUROBI3EhMSExAVERMRFBI3ExIRFBEUERMSOBETERUQFRETERMRFBITERQRExEUETgRORE4EjgSNxQ2ETgSNxEUEQAFuQABJksSAA0FAAAAAAAAAAA=
+        sinput-tv:
+          service: broadlink.send
           service_data:
-            command: HOME
-            entity_id: media_player.firetv
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJZUSOBM2ERQSExAVERMQFRE5EBQSEhEUEhMSNxEUERQSExE4ERQSEhI4ERMSFBAUERQRExI4EzYRFBI3EjgRORA5EgANBQ==
+        sinput-phono:
+          service: broadlink.send
+          service_data:
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABKZERORE4ERQRExUQERQVEBE4FBERExUQFRAROBITFRARExQRFRARFBE4FRAUEBITERQROBE5FDUVEBE4EjgROBU0FQANBQ==
+        sinput-cd:
+          service: broadlink.send
+          service_data:
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJZUROBI4ERMVEBQRERMSExI4FBASExEUERQUNREUFBASExU1FBASExEUERMSExUQERQRExQ2ETgUNhE4FDYROBE4FQANBQ==
+        sinput-bluray:
+          service: broadlink.send
+          service_data:
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABKZEWNBE4ERQWDxETEhMWDxE4ERQVEBQQEhMVNRUPERQWDxE4FjQROBEUERMSExUQERQUEBUQERQWMxU1ETgROBU1EgANBQ==
         down:
-          service: androidtv.adb_command
+          service: broadlink.send
           service_data:
-            command: DOWN
-            entity_id: media_player.firetv
-        up:
-          service: androidtv.adb_command
-          service_data:
-            command: UP
-            entity_id: media_player.firetv
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJpQRORE4ERQRExITERQRFBE4ERQROBITERQROBE4EhMRFBEUERMSExE4EjgRFBE4ERQROBE5ETgRFBETEjgRFBE4EQANBQ==
         left:
-          service: androidtv.adb_command
+          service: broadlink.send
           service_data:
-            command: LEFT
-            entity_id: media_player.firetv
-        select:
-          service: androidtv.adb_command
-          service_data:
-            command: "input keyevent 23"
-            entity_id: media_player.firetv
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJZUROBI4ERMSExEUERQRExI4ERQROBEUERMSOBE4ERQRFBETEhMSNxI4ETgSExEUERMSOBE4EhQRExETEjgROBI4EQANBQ==
         right:
-          service: androidtv.adb_command
+          service: broadlink.send
           service_data:
-            command: RIGHT
-            entity_id: media_player.firetv
-        reverse:
-          service: androidtv.adb_command
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJZURORE4ERQRFBAUERQRFBE4ERQROBITERQROBE5ERMSExE4EhMROBI3EhQRFBE4ERQRExI4ERQRExE5ETgRFBE4EQANBQ==
+        select:
+          service: broadlink.send
           service_data:
-            command: input keyevent 89
-            entity_id: media_player.firetv
-        pauseplay:
-          service: androidtv.adb_command
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJZURORE4ERQRFBAUERQRFBE4ERQROBITERQROBE5ERMSExEUETgRORE4ETgSExEUERQROBEUERQRExEUETgSOBE4EQANBQ==
+        up:
+          service: broadlink.send
           service_data:
-            command: input keyevent 85
-            entity_id: media_player.firetv
-        forward:
-          service: androidtv.adb_command
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJZURORE4ERQRFBAUERQRFBE4ERQROBEUERQROBE5ERMSExE4EjgROBITETgSExE5ERMSExEUERMSOBETEjgRFBE4EQANBQ==
+        volume_down:
+          service: broadlink.send
           service_data:
-            command: input keyevent 90
-            entity_id: media_player.firetv
-        menu:
-          service: androidtv.adb_command
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJpQSOBE4EhMRFBAUEhMRFBE4EhMRFBETEhMROBITERQRFBE4ETgTNxEUETgRFBEUERMSExEUERMSOBEUETgROBI4EQANBQ==
+        volume_mute:
+          service: broadlink.send
           service_data:
-            command: MENU
-            entity_id: media_player.firetv
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJZUSNxI4ERMSExEUERQRExI4ERQRExEUERQROBEUEhMRExITERQRExI4ETgSExITERQROBE4EjgRFBETEjgROBE5EQANBQ==
+        volume_up:
+          service: broadlink.send
+          service_data:
+            host: 192.168.178.73
+            packet: >-
+              JgBIAAABJpQSOBE4EhMRFBETEhMRFBE4EhMSExETEhMRORETERQRFBEUETgROBEUETkRExITERQROBEUERQROBEUETgROBI4EQANBQ==
 ```
 
 **Custom Updater:**
