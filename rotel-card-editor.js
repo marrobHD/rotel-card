@@ -21,7 +21,7 @@ const LitElement = Object.getPrototypeOf(
 );
 const html = LitElement.prototype.html;
 
-export class FireTVCardEditor extends LitElement {
+export class ROTELCardEditor extends LitElement {
   setConfig(config) {
     this._config = config;
   }
@@ -187,4 +187,4 @@ export class FireTVCardEditor extends LitElement {
   }
 }
 
-customElements.define("firetv-card-editor", FireTVCardEditor);
+customElements.define("rotel-card-editor", ROTELCardEditor);
