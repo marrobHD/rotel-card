@@ -20,7 +20,7 @@ This card is for [Lovelace](https://www.home-assistant.io/lovelace) on [Home Ass
 # NOTE: Firefox releases before 67 are not supported
 https://twitter.com/_developit/status/1090364879377260544
 
-![ex](https://i.imgur.com/CijSH49.png)
+![ex](https://i.imgur.com/ff9GHRC.png)
 
 ## Options
 
@@ -191,15 +191,15 @@ custom_updater:
 
 [Troubleshooting](https://github.com/thomasloven/hass-config/wiki/Lovelace-Plugins)
 
-[commits-shield]: https://img.shields.io/github/commit-activity/y/marrobHD/firetv-card.svg?style=for-the-badge
-[commits]: https://github.com/marrobHD/firetv-card/commits/master
+[commits-shield]: https://img.shields.io/github/commit-activity/y/marrobHD/rotel-card.svg?style=for-the-badge
+[commits]: https://github.com/marrobHD/rotel-card/commits/master
 [discord]: https://discord.gg/ND4emRS
 [discord-shield]: https://img.shields.io/discord/579704220970909717.svg?style=for-the-badge
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/t/lovelace-tv-remote-card/91476
-[license-shield]: https://img.shields.io/github/license/marrobHD/firetv-card.svg?style=for-the-badge
+[forum]: https://community.home-assistant.io/t/lovelace-rotel-remote-card/91476
+[license-shield]: https://img.shields.io/github/license/marrobHD/rotel-card.svg?style=for-the-badge
 [maintenance-shield]: https://img.shields.io/badge/maintainer-marrobHD-blue.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/marrobHD/firetv-card.svg?style=for-the-badge
-[releases]: https://github.com/marrobHD/firetv-card/releases
+[releases-shield]: https://img.shields.io/github/release/marrobHD/rotel-card.svg?style=for-the-badge
+[releases]: https://github.com/marrobHD/rotel-card/releases
 [twitter]: https://img.shields.io/twitter/follow/mar_robHD.svg?style=social
 [github]: https://img.shields.io/github/followers/marrobHD.svg?style=social
