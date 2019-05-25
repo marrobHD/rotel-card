@@ -15,7 +15,7 @@
 
 ## Support
 
-This card is for [Lovelace](https://www.home-assistant.io/lovelace) on [Home Assistant](https://www.home-assistant.io/) that display a [Rotel]() remote.
+This card is for [Lovelace](https://www.home-assistant.io/lovelace) on [Home Assistant](https://www.home-assistant.io/) that display a [Rotel](http://www.rotel.com/de/home-theater) remote.
 
 # NOTE: Firefox releases before 67 are not supported
 https://twitter.com/_developit/status/1090364879377260544
