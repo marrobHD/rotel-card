@@ -1,5 +1,5 @@
 # Rotel Remote Card
-📺 [Rotel Lovelace Card](https://github.com/custom-cards/roku-card) editited by mar_robHD
+🔊 [Rotel Lovelace Card](https://github.com/custom-cards/roku-card) editited by mar_robHD
 
 [![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE.md)
