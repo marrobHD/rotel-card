@@ -3,7 +3,7 @@ const LitElement = Object.getPrototypeOf(
 );
 const html = LitElement.prototype.html;
 
-class FireTVCardServices extends LitElement {
+class ROTELCardServices extends LitElement {
   static get properties() {
     return {
       hass: {},
@@ -13,8 +13,8 @@ class FireTVCardServices extends LitElement {
   }
 
   static async getConfigElement() {
-    await import("./tv-card-editor.js");
-    return document.createElement("tv-card-editor");
+    await import("./rotel-card-editor.js");
+    return document.createElement("rotel-card-editor");
   }
 
   static getStubConfig() {
@@ -44,39 +44,49 @@ class FireTVCardServices extends LitElement {
       ${this.renderStyle()}
       <ha-card .header="${this._config.name}">
           <div class="row">
-            <paper-dropdown-menu
-              label="Input Source"
-              @value-changed="${this.launchApp}"
-            >
-              <paper-listbox
-                slot="dropdown-content"
-                .selected="${
-                  stateObj.attributes.source_list.indexOf(
-                    stateObj.attributes.source
-                  )
-                }"
-              >
-                ${
-                  stateObj.attributes.source_list.map(source => {
-                    return html`
-                      <paper-item>${source}</paper-item>
-                    `;
-                  })
-                }
-              </paper-listbox>
-            </paper-dropdown-menu>
-            ${
-              this._config.tv || this._config.power
-                ? html`
-                    <paper-icon-button
-                      .action="${"power"}"
-                      @click="${this.handleActionClick}"
-                      icon="mdi:power"
-                      title="Power"
-                    ></paper-icon-button>
-                  `
-                : ""
-            }
+
+          </div>
+          <div class="row">
+            <paper-icon-button
+              .action="${"power-off"}"
+              @click="${this.handleActionClick}"
+              icon="mdi:power-off"
+              title="Power Off"
+            ></paper-icon-button>
+            <paper-icon-button
+              .action="${"sinput-tv"}"
+              @click="${this.handleActionClick}"
+              icon="mdi:television"
+              title="Select input TV"
+            ></paper-icon-button>
+            <paper-icon-button
+              .action="${"power"}"
+              @click="${this.handleActionClick}"
+              icon="mdi:power"
+              title="Power"
+            ></paper-icon-button>
+
+          </div>
+          <div class="row">
+            <paper-icon-button
+              .action="${"sinput-bluray"}"
+              @click="${this.handleActionClick}"
+              icon="mdi:alpha-b-box-outline"
+              title="Select input CD"
+            ></paper-icon-button>
+            <paper-icon-button
+              .action="${"sinput-phono"}"
+              @click="${this.handleActionClick}"
+              icon="mdi:album"
+              title="Select input phono"
+            ></paper-icon-button>
+            <paper-icon-button
+              .action="${"sinput-cd"}"
+              @click="${this.handleActionClick}"
+              icon="mdi:disc-player"
+              title="Select input CD"
+            ></paper-icon-button>
+
           </div>
 
           <div class="row">
@@ -107,6 +117,7 @@ class FireTVCardServices extends LitElement {
               icon="mdi:chevron-right"
               title="Right"
             ></paper-icon-button>
+
           </div>
 
           <div class="row">
@@ -116,51 +127,6 @@ class FireTVCardServices extends LitElement {
               icon="mdi:chevron-down"
               title="Down"
             ></paper-icon-button>
-          </div>
-
-          </div>
-          <div class="row">
-            <paper-icon-button
-              .action="${"back"}"
-              @click="${this.handleActionClick}"
-              icon="mdi:arrow-left"
-              title="Back"
-            ></paper-icon-button>
-            <paper-icon-button
-              .action="${"home"}"
-              @click="${this.handleActionClick}"
-              icon="mdi:home"
-              title="Home"
-            ></paper-icon-button>
-            <paper-icon-button
-              .action="${"menu"}"
-              @click="${this.handleActionClick}"
-              icon="mdi:menu"
-              title="Menu"
-            ></paper-icon-button>
-
-          </div>
-
-          <div class="row">
-            <paper-icon-button
-              .action="${"reverse"}"
-              @click="${this.handleActionClick}"
-              icon="mdi:rewind"
-              title="Rewind"
-            ></paper-icon-button>
-            <paper-icon-button
-              .action="${"pauseplay"}"
-              @click="${this.handleActionClick}"
-              icon="mdi:play-pause"
-              title="Play/Pause"
-            ></paper-icon-button>
-            <paper-icon-button
-              .action="${"forward"}"
-              @click="${this.handleActionClick}"
-              icon="mdi:fast-forward"
-              title="Fast-Forward"
-            ></paper-icon-button>
-
           </div>
 
           ${
@@ -242,17 +208,19 @@ class FireTVCardServices extends LitElement {
   handleActionClick(e) {
     const custom_services = [
       "power",
-      "back",
-      "home",
-	  "menu",
+      "volume_up",
+      "volume_down",
+      "volume_mute",
       "up",
       "left",
       "select",
       "right",
       "down",
-      "reverse",
-      "pauseplay",
-	  "forward"
+      "power-off",
+      "sinput-tv",
+	  "sinput-bluray",
+      "sinput-phono",
+      "sinput-cd"
     ];
 
     if (
@@ -319,4 +287,4 @@ class FireTVCardServices extends LitElement {
   }
 }
 
-customElements.define("firetv-card", FireTVCardServices);
+customElements.define("rotel-card", ROTELCardServices);
