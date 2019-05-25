@@ -1,9 +1,9 @@
 {
-  "firetv-card": {
-    "updated_at": "2019-05-19",
+  "rotel-card": {
+    "updated_at": "2019-05-35",
     "version": "0.0.8",
-    "remote_location": "https://github.com/marrobHD/firetv-card/releases/download/v0.0.8/firetv-card.js",
-    "visit_repo": "https://github.com/marrobHD/firetv-card/",
-    "changelog": "https://github.com/marrobHD/firetv-card/releases/latest"
+    "remote_location": "https://github.com/marrobHD/rotel-card/releases/download/v0.0.8/rotel-card.js",
+    "visit_repo": "https://github.com/marrobHD/rotel-card/",
+    "changelog": "https://github.com/marrobHD/rotel-card/releases/latest"
   }
 }
