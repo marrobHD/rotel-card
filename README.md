@@ -6,7 +6,7 @@
 
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
-[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
@@ -56,6 +56,17 @@ https://twitter.com/_developit/status/1090364879377260544
 
 
 ## Installation
+
+### HACS:
+
+1.
+
+Add this to your `HACS settings tab`:
+
+```
+https://github.com/marrobHD/rotel-card
+```
+![example](https://i.imgur.com/2urg4m2.png)
 
 ### Step 1
 
