@@ -97,10 +97,9 @@ Add a custom element in your `ui-lovelace.yaml`
 Configuration for [Rotel RSX-1562](http://www.rotel.com/sites/default/files/product/rsx1562_silver.jpg):
 
 ```yaml
-      - type: 'custom:rotel-card'
+        type: 'custom:rotel-card'
         theme: Backend-selected
         tv: false
-        type: 'custom:rotel-card'
         name: Rotel
         remote: input_select.tv_input
         power:
