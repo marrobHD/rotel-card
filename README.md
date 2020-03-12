@@ -97,6 +97,104 @@ Add a custom element in your `ui-lovelace.yaml`
 Configuration for [Rotel RSX-1562](http://www.rotel.com/sites/default/files/product/rsx1562_silver.jpg):
 
 ```yaml
+type: 'custom:rotel-card'
+name: Rotel
+down:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJpQRORE4ERQRExITERQRFBE4ERQROBITERQROBE4EhMRFBEUERMSExE4EjgRFBE4ERQROBE5ETgRFBETEjgRFBE4EQANBQ==
+entity: media_player.spotify
+left:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJZUROBI4ERMSExEUERQRExI4ERQROBEUERMSOBE4ERQRFBETEhMSNxI4ETgSExEUERMSOBE4EhQRExETEjgROBI4EQANBQ==
+power:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBQAAABJZUQORI3ExIRFQ8VEBQRFRE3ERURExAWDxUROBAUEhMRFBAUERUQFQ86EDkQFREUEDgROhA6EDkQFBAVEDkRORAUEgAFuQABJ0oQAA0FAAAAAAAAAAA=
+power-off:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBQAAABJpUROBI3EhMSExAVERMRFBI3ExIRFBEUERMSOBETERUQFRETERMRFBITERQRExEUETgRORE4EjgSNxQ2ETgSNxEUEQAFuQABJksSAA0FAAAAAAAAAAA=
+remote: input_select.tv_input
+right:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJZURORE4ERQRFBAUERQRFBE4ERQROBITERQROBE5ERMSExE4EhMROBI3EhQRFBE4ERQRExI4ERQRExE5ETgRFBE4EQANBQ==
+select:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJZURORE4ERQRFBAUERQRFBE4ERQROBITERQROBE5ERMSExEUETgRORE4ETgSExEUERQROBEUERQRExEUETgSOBE4EQANBQ==
+sinput-bluray:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABKZEWNBE4ERQWDxETEhMWDxE4ERQVEBQQEhMVNRUPERQWDxE4FjQROBEUERMSExUQERQUEBUQERQWMxU1ETgROBU1EgANBQ==
+sinput-cd:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJZUROBI4ERMVEBQRERMSExI4FBASExEUERQUNREUFBASExU1FBASExEUERMSExUQERQRExQ2ETgUNhE4FDYROBE4FQANBQ==
+sinput-phono:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABKZERORE4ERQRExUQERQVEBE4FBERExUQFRAROBITFRARExQRFRARFBE4FRAUEBITERQROBE5FDUVEBE4EjgROBU0FQANBQ==
+sinput-tv:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJZUSOBM2ERQSExAVERMQFRE5EBQSEhEUEhMSNxEUERQSExE4ERQSEhI4ERMSFBAUERQRExI4EzYRFBI3EjgRORA5EgANBQ==
+tv: false
+up:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJZURORE4ERQRFBAUERQRFBE4ERQROBEUERQROBE5ERMSExE4EjgROBITETgSExE5ERMSExEUERMSOBETEjgRFBE4EQANBQ==
+volume_down:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJpQSOBE4EhMRFBAUEhMRFBE4EhMRFBETEhMROBITERQRFBE4ETgTNxEUETgRFBEUERMSExEUERMSOBEUETgROBI4EQANBQ==
+volume_mute:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJZUSNxI4ERMSExEUERQRExI4ERQRExEUERQROBEUEhMRExITERQRExI4ETgSExITERQROBE4EjgRFBETEjgROBE5EQANBQ==
+volume_up:
+  service: broadlink.send
+  service_data:
+    host: 192.168.1.53
+    packet: >-
+      JgBIAAABJpQSOBE4EhMRFBETEhMRFBE4EhMSExETEhMRORETERQRFBEUETgROBEUETkRExITERQROBEUERQROBEUETgROBI4EQANBQ==
+```
+
+
+### Example 1:
+
+You can use the card in combination with the [browser mod integration](https://github.com/thomasloven/hass-browser_mod).
+That means that you can create a ex. input_boolean which opens when you click on its icon:
+
+```yaml
 type: entities
 entities:
   - entity: switch.receiver
@@ -199,91 +297,6 @@ entities:
               host: 192.168.1.53
               packet: >-
                 JgBIAAABJpQSOBE4EhMRFBETEhMRFBE4EhMSExETEhMRORETERQRFBEUETgROBEUETkRExITERQROBEUERQROBEUETgROBI4EQANBQ==
-```
-
-
-### Example 1:
-
-You can use the card in combination with the [browser mod integration](https://github.com/thomasloven/hass-browser_mod).
-That means that you can create a ex. input_boolean which opens when you click on its icon:
-
-```yaml
-type: entities
-entities:
-  - entity: input_boolean.firetv
-    name: FireTV
-    tap_action:
-      action: call-service
-      service: browser_mod.popup
-      service_data:
-        style:
-          border-radius: 20px
-          '--ha-card-border-radius': 0px
-        title: FireTV Fernbedienung
-        card:
-          type: 'custom:firetv-card'
-          back:
-            service: androidtv.adb_command
-            service_data:
-              command: BACK
-              entity_id: media_player.firetv
-          down:
-            service: androidtv.adb_command
-            service_data:
-              command: DOWN
-              entity_id: media_player.firetv
-          entity: media_player.spotify
-          forward:
-            service: androidtv.adb_command
-            service_data:
-              command: input keyevent 90
-              entity_id: media_player.firetv
-          home:
-            service: androidtv.adb_command
-            service_data:
-              command: HOME
-              entity_id: media_player.firetv
-          left:
-            service: androidtv.adb_command
-            service_data:
-              command: LEFT
-              entity_id: media_player.firetv
-          menu:
-            service: androidtv.adb_command
-            service_data:
-              command: MENU
-              entity_id: media_player.firetv
-          pauseplay:
-            service: androidtv.adb_command
-            service_data:
-              command: input keyevent 85
-              entity_id: media_player.firetv
-          power:
-            service: androidtv.adb_command
-            service_data:
-              command: input keyevent 26
-              entity_id: media_player.firetv
-          reverse:
-            service: androidtv.adb_command
-            service_data:
-              command: input keyevent 89
-              entity_id: media_player.firetv
-          right:
-            service: androidtv.adb_command
-            service_data:
-              command: RIGHT
-              entity_id: media_player.firetv
-          select:
-            service: androidtv.adb_command
-            service_data:
-              command: input keyevent 23
-              entity_id: media_player.firetv
-          tv: false
-          up:
-            service: androidtv.adb_command
-            service_data:
-              command: UP
-              entity_id: media_player.firetv
 ```
 
 **Custom Updater:**
