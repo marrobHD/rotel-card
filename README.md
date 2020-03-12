@@ -99,13 +99,13 @@ Configuration for [Rotel RSX-1562](http://www.rotel.com/sites/default/files/prod
 ```yaml
 type: 'custom:rotel-card'
 name: Rotel
+entity: sun.sun
 down:
   service: broadlink.send
   service_data:
     host: 192.168.1.53
     packet: >-
       JgBIAAABJpQRORE4ERQRExITERQRFBE4ERQROBITERQROBE4EhMRFBEUERMSExE4EjgRFBE4ERQROBE5ETgRFBETEjgRFBE4EQANBQ==
-entity: sun.sun
 left:
   service: broadlink.send
   service_data:
@@ -210,13 +210,13 @@ entities:
         title: Rotel RSX-1562 Fernbedienung
         card:
           type: 'custom:rotel-card'
+          entity: sun.sun
           down:
             service: broadlink.send
             service_data:
               host: 192.168.1.53
               packet: >-
                 JgBIAAABJpQRORE4ERQRExITERQRFBE4ERQROBITERQROBE4EhMRFBEUERMSExE4EjgRFBE4ERQROBE5ETgRFBETEjgRFBE4EQANBQ==
-          entity: sun.sun
           left:
             service: broadlink.send
             service_data:
