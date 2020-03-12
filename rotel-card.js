@@ -12,10 +12,10 @@ class ROTELCardServices extends LitElement {
     };
   }
 
-  static async getConfigElement() {
-    await import("./rotel-card-editor.js");
-    return document.createElement("rotel-card-editor");
-  }
+//  static async getConfigElement() {
+//    await import("./rotel-card-editor.js");
+//    return document.createElement("rotel-card-editor");
+//  }
 
   static getStubConfig() {
     return {};
