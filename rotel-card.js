@@ -12,10 +12,10 @@ class ROTELCardServices extends LitElement {
     };
   }
 
-//  static async getConfigElement() {
-//    await import("./rotel-card-editor.js");
-//    return document.createElement("rotel-card-editor");
-//  }
+  //static async getConfigElement() {
+  //  await import("./rotel-card-editor.js");
+  //  return document.createElement("rotel-card-editor");
+  //}
 
   static getStubConfig() {
     return {};
@@ -43,48 +43,52 @@ class ROTELCardServices extends LitElement {
     return html`
       ${this.renderStyle()}
       <ha-card .header="${this._config.name}">
-          <div class="row">
 
-          </div>
-          <div class="row">
-            <ha-icon-button
-              .action="${"power-off"}"
-              @click="${this.handleActionClick}"
-              icon="mdi:power-off"
-              title="Power Off"
-            ></ha-icon-button>
-            <ha-icon-button
-              .action="${"sinput-tv"}"
-              @click="${this.handleActionClick}"
-              icon="mdi:television"
-              title="Select input TV"
-            ></ha-icon-button>
-            <ha-icon-button
-              .action="${"power"}"
-              @click="${this.handleActionClick}"
-              icon="mdi:power"
-              title="Power"
-            ></ha-icon-button>
+          ${
+            this._config.receiver ||
+            this._config.invisible ||
+            this._config.power
+              ? html`
+                  <div class="row">
+                    <ha-icon-button
+                      .action="${"power-off"}"
+                      @click="${this.handleActionClick}"
+                      title="Power Off"
+                    ><ha-icon icon="mdi:power"></ha-icon></ha-icon-button>
+                    <ha-icon-button
+                      .action="${"sinput-tv"}"
+                      @click="${this.handleActionClick}"
+                      title="Select input TV"
+                    ><ha-icon icon="mdi:television"></ha-icon></ha-icon-button>
+                    <ha-icon-button
+                      .action="${"power"}"
+                      @click="${this.handleActionClick}"
+                      title="Power"
+                    ><ha-icon icon="mdi:power"></ha-icon></ha-icon-button>
+                    </div>
+                `
+              : ""
+          }
 
           </div>
           <div class="row">
             <ha-icon-button
               .action="${"sinput-bluray"}"
               @click="${this.handleActionClick}"
-              icon="mdi:alpha-b-box-outline"
               title="Select input CD"
+            ><ha-icon icon="mdi:alpha-b-box-outline"></ha-icon></ha-icon-button>
             ></ha-icon-button>
             <ha-icon-button
               .action="${"sinput-phono"}"
               @click="${this.handleActionClick}"
-              icon="mdi:album"
               title="Select input phono"
+            ><ha-icon icon="mdi:album"></ha-icon></ha-icon-button>
             ></ha-icon-button>
             <ha-icon-button
               .action="${"sinput-cd"}"
               @click="${this.handleActionClick}"
-              icon="mdi:disc-player"
               title="Select input CD"
+            ><ha-icon icon="mdi:disc-player"></ha-icon></ha-icon-button>
             ></ha-icon-button>
 
           </div>
@@ -93,8 +97,8 @@ class ROTELCardServices extends LitElement {
             <ha-icon-button
               .action="${"up"}"
               @click="${this.handleActionClick}"
-              icon="mdi:chevron-up"
               title="Up"
+            ><ha-icon icon="mdi:chevron-up"></ha-icon></ha-icon-button>
             ></ha-icon-button>
           </div>
 
@@ -102,20 +106,20 @@ class ROTELCardServices extends LitElement {
             <ha-icon-button
               .action="${"left"}"
               @click="${this.handleActionClick}"
-              icon="mdi:chevron-left"
               title="Left"
+            ><ha-icon icon="mdi:chevron-left"></ha-icon></ha-icon-button>
             ></ha-icon-button>
             <ha-icon-button
               .action="${"select"}"
               @click="${this.handleActionClick}"
-              icon="mdi:checkbox-blank-circle"
               title="Select"
+              ><ha-icon icon="mdi:checkbox-blank-circle"></ha-icon></ha-icon-button>
             ></ha-icon-button>
             <ha-icon-button
               .action="${"right"}"
               @click="${this.handleActionClick}"
-              icon="mdi:chevron-right"
               title="Right"
+            ><ha-icon icon="mdi:chevron-right"></ha-icon></ha-icon-button>
             ></ha-icon-button>
 
           </div>
@@ -124,13 +128,13 @@ class ROTELCardServices extends LitElement {
             <ha-icon-button
               .action="${"down"}"
               @click="${this.handleActionClick}"
-              icon="mdi:chevron-down"
               title="Down"
+            ><ha-icon icon="mdi:chevron-down"></ha-icon></ha-icon-button>
             ></ha-icon-button>
           </div>
 
           ${
-            this._config.tv && (
+            this._config.receiver && (
             this._config.volume_up ||
             this._config.volume_down ||
             this._config.volume_mute )
@@ -139,20 +143,20 @@ class ROTELCardServices extends LitElement {
                     <ha-icon-button
                       .action="${"volume_mute"}"
                       @click="${this.handleActionClick}"
-                      icon="mdi:volume-mute"
                       title="Volume Mute"
+                    ><ha-icon icon="mdi:volume-mute"></ha-icon></ha-icon-button>
                     ></ha-icon-button>
                     <ha-icon-button
                       .action="${"volume_down"}"
                       @click="${this.handleActionClick}"
-                      icon="mdi:volume-minus"
                       title="Volume Down"
+                    ><ha-icon icon="mdi:volume-minus"></ha-icon></ha-icon-button>
                     ></ha-icon-button>
                     <ha-icon-button
                       .action="${"volume_up"}"
                       @click="${this.handleActionClick}"
-                      icon="mdi:volume-plus"
                       title="Volume Up"
+                    ><ha-icon icon="mdi:volume-plus"></ha-icon></ha-icon-button>
                     ></ha-icon-button>
                   </div>
                 `
