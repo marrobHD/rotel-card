@@ -8,7 +8,7 @@ class ROTELCardServices extends LitElement {
     return {
       hass: {},
       _config: {},
-      _apps: {}
+      _apps: {},
     };
   }
 
@@ -43,7 +43,8 @@ class ROTELCardServices extends LitElement {
     return html`
       ${this.renderStyle()}
       <ha-card .header="${this._config.name}">
-
+        <div class="row">
+          </div>
           ${
             this._config.receiver ||
             this._config.invisible ||
@@ -54,43 +55,41 @@ class ROTELCardServices extends LitElement {
                       .action="${"power-off"}"
                       @click="${this.handleActionClick}"
                       title="Power Off"
-                    ><ha-icon icon="mdi:power"></ha-icon></ha-icon-button>
+                      ><ha-icon icon="mdi:power"></ha-icon
+                    ></ha-icon-button>
                     <ha-icon-button
                       .action="${"sinput-tv"}"
                       @click="${this.handleActionClick}"
                       title="Select input TV"
-                    ><ha-icon icon="mdi:television"></ha-icon></ha-icon-button>
+                      ><ha-icon icon="mdi:television"></ha-icon
+                    ></ha-icon-button>
                     <ha-icon-button
                       .action="${"power"}"
                       @click="${this.handleActionClick}"
                       title="Power"
-                    ><ha-icon icon="mdi:power"></ha-icon></ha-icon-button>
-                    </div>
+                      ><ha-icon icon="mdi:power"></ha-icon
+                    ></ha-icon-button>
+                  </div>
                 `
               : ""
           }
 
-          </div>
           <div class="row">
             <ha-icon-button
               .action="${"sinput-bluray"}"
               @click="${this.handleActionClick}"
               title="Select input CD"
             ><ha-icon icon="mdi:alpha-b-box-outline"></ha-icon></ha-icon-button>
-            ></ha-icon-button>
             <ha-icon-button
               .action="${"sinput-phono"}"
               @click="${this.handleActionClick}"
               title="Select input phono"
             ><ha-icon icon="mdi:album"></ha-icon></ha-icon-button>
-            ></ha-icon-button>
             <ha-icon-button
               .action="${"sinput-cd"}"
               @click="${this.handleActionClick}"
               title="Select input CD"
             ><ha-icon icon="mdi:disc-player"></ha-icon></ha-icon-button>
-            ></ha-icon-button>
-
           </div>
 
           <div class="row">
@@ -99,7 +98,6 @@ class ROTELCardServices extends LitElement {
               @click="${this.handleActionClick}"
               title="Up"
             ><ha-icon icon="mdi:chevron-up"></ha-icon></ha-icon-button>
-            ></ha-icon-button>
           </div>
 
           <div class="row">
@@ -108,20 +106,16 @@ class ROTELCardServices extends LitElement {
               @click="${this.handleActionClick}"
               title="Left"
             ><ha-icon icon="mdi:chevron-left"></ha-icon></ha-icon-button>
-            ></ha-icon-button>
             <ha-icon-button
               .action="${"select"}"
               @click="${this.handleActionClick}"
               title="Select"
               ><ha-icon icon="mdi:checkbox-blank-circle"></ha-icon></ha-icon-button>
-            ></ha-icon-button>
             <ha-icon-button
               .action="${"right"}"
               @click="${this.handleActionClick}"
               title="Right"
             ><ha-icon icon="mdi:chevron-right"></ha-icon></ha-icon-button>
-            ></ha-icon-button>
-
           </div>
 
           <div class="row">
@@ -130,33 +124,32 @@ class ROTELCardServices extends LitElement {
               @click="${this.handleActionClick}"
               title="Down"
             ><ha-icon icon="mdi:chevron-down"></ha-icon></ha-icon-button>
-            ></ha-icon-button>
           </div>
 
           ${
-            this._config.receiver && (
-            this._config.volume_up ||
-            this._config.volume_down ||
-            this._config.volume_mute )
+            this._config.receiver &&
+            (this._config.volume_up ||
+              this._config.volume_down ||
+              this._config.volume_mute)
               ? html`
                   <div class="row">
                     <ha-icon-button
                       .action="${"volume_mute"}"
                       @click="${this.handleActionClick}"
                       title="Volume Mute"
-                    ><ha-icon icon="mdi:volume-mute"></ha-icon></ha-icon-button>
+                      ><ha-icon icon="mdi:volume-mute"></ha-icon
                     ></ha-icon-button>
                     <ha-icon-button
                       .action="${"volume_down"}"
                       @click="${this.handleActionClick}"
                       title="Volume Down"
-                    ><ha-icon icon="mdi:volume-minus"></ha-icon></ha-icon-button>
+                      ><ha-icon icon="mdi:volume-minus"></ha-icon
                     ></ha-icon-button>
                     <ha-icon-button
                       .action="${"volume_up"}"
                       @click="${this.handleActionClick}"
                       title="Volume Up"
-                    ><ha-icon icon="mdi:volume-plus"></ha-icon></ha-icon-button>
+                      ><ha-icon icon="mdi:volume-plus"></ha-icon
                     ></ha-icon-button>
                   </div>
                 `
@@ -189,7 +182,7 @@ class ROTELCardServices extends LitElement {
           width: 64px;
           height: 64px;
           cursor: pointer;
-		   --mdc-icon-size: 100%;
+          --mdc-icon-size: 100%;
         }
         .row {
           display: flex;
@@ -206,7 +199,7 @@ class ROTELCardServices extends LitElement {
   launchApp(e) {
     this.hass.callService("media_player", "select_source", {
       entity_id: this._config.entity,
-      source: e.currentTarget.value
+      source: e.currentTarget.value,
     });
   }
 
@@ -223,9 +216,9 @@ class ROTELCardServices extends LitElement {
       "down",
       "power-off",
       "sinput-tv",
-	  "sinput-bluray",
+      "sinput-bluray",
       "sinput-phono",
-      "sinput-cd"
+      "sinput-cd",
     ];
 
     if (
@@ -267,7 +260,7 @@ class ROTELCardServices extends LitElement {
     const styles = Object.assign({}, element._themes);
     if (themeName !== "default") {
       var theme = themes.themes[themeName];
-      Object.keys(theme).forEach(key => {
+      Object.keys(theme).forEach((key) => {
         var prefixedKey = "--" + key;
         element._themes[prefixedKey] = "";
         styles[prefixedKey] = theme[key];
